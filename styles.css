@@ -13,11 +13,12 @@
 #bCon{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 
-#b1,#b2,#b3{
+#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9{
     height: 12vh;
     width: 20%;
     background-color: tomato;
