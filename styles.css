@@ -1,9 +1,21 @@
-#Body{
+#results{
     display: flex;
+    height: 12vh;
+    width: 80%;
+    background-color: whitesmoke;
+    position: relative;
+    top: 6vh;
+}
+
+
+
+#body{
+    display: flex;
+    justify-content: center;
     margin: auto;
     position: relative;
     top: 5vh;
     height: 80vh;
     width: 25vw;
-    background-color: grey;
+    background-color: #5e5e5e;
 }
