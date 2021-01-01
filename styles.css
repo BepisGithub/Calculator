@@ -6,12 +6,25 @@
     position: relative;
     top: 6vh;
 }
+#bCon{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
+
+#b1,#b2,#b3{
+    height: 12vh;
+    width: 20%;
+    background-color: tomato;
+    border: solid 1px black;
+}
 
 
 #body{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: auto;
     position: relative;
     top: 5vh;
