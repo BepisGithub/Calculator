@@ -1,0 +1,9 @@
+#Body{
+    display: flex;
+    margin: auto;
+    position: relative;
+    top: 5vh;
+    height: 80vh;
+    width: 25vw;
+    background-color: grey;
+}
