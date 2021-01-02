@@ -13,6 +13,12 @@
     font-size: 50px;
 }
 
+.function{
+    margin: 20% 0 0 0;
+    text-align: center;
+    font-size: 50px;
+}
+
 #results{
     display: flex;
     height: 12vh;
