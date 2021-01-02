@@ -25,6 +25,10 @@
     background-color: #046664;
 }
 
+#backText,#clearText{
+    position: relative;
+    bottom: 3vh;
+}
 
 #results{
     display: flex;
