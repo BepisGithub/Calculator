@@ -5,7 +5,13 @@
 .break {
     flex-basis: 100%;
     height: 0;
-  }
+}
+
+.number{
+    margin: 20% 0 0 0;
+    text-align: center;
+    font-size: 50px;
+}
 
 #results{
     display: flex;
@@ -22,12 +28,19 @@
     justify-content: space-evenly;
 }
 
+#badd,#bsubtract,#bmultiply,#bdivide,#bequal{
+    height: 10vh;
+    width: 10vh;
+    background-color: #046664;
+}
 
-#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9{
-    height: 12vh;
-    width: 20%;
+#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b0{
+    height: 10vh;
+    width: 10vh;
     background-color: tomato;
 }
+
+
 
 
 #Calc{
