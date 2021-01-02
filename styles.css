@@ -19,6 +19,13 @@
     font-size: 50px;
 }
 
+#bclear,#bbackspace{
+    height: 7vh;
+    width: 35%;
+    background-color: #046664;
+}
+
+
 #results{
     display: flex;
     height: 12vh;
@@ -34,7 +41,7 @@
     justify-content: space-evenly;
 }
 
-#badd,#bsubtract,#bmultiply,#bdivide,#bequal{
+#badd,#bsubtract,#bmultiply,#bdivide,#bequal,#bdecimal{
     height: 10vh;
     width: 10vh;
     background-color: #046664;
