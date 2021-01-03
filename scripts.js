@@ -26,3 +26,11 @@ function operate(a,operator,b){
             return divide(a,b);
     }
 }
+
+const body = document.querySelector("body");
+let numberButtons = [];
+
+for(i=0;i<10;i++){
+    numberButtons[i] = document.querySelector(`#b${i}`)
+}
+console.table(numberButtons);
