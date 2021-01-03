@@ -43,6 +43,26 @@ let resultsDisplay = body.querySelector("#results")
 for(i=0;i<10;i++){
     numberButtons[i] = document.querySelector(`#b${i}`)
 }
+
+function scaleFontSize(element) {
+
+    // Reset font-size to 100% to begin
+    resultsDisplay.style.fontSize = "6vh";
+    let i = 9;
+    // Check if the text is wider than its container,
+    // if so then reduce font-size
+    while (resultsDisplay.scrollWidth > resultsDisplay.clientWidth) {
+        if(i<3){
+            i = 3;
+            resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
+            break;
+
+        }
+        resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
+        i--;
+    }
+}
+
 numberButtons.forEach((element,index) => { //goona make this so that it doesnt get converted to a number till one of the operations is pressed
     element.addEventListener("click",() => {
         let temp = element.getAttribute("id");
@@ -51,6 +71,7 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         displayValue += temp;
         // console.log(displayValue);
         resultsDisplay.textContent = displayValue;
+        scaleFontSize(resultsDisplay)
 
     });
 });
