@@ -29,17 +29,18 @@ function operate(a,operator,b){
 
 const body = document.querySelector("body");
 let numberButtons = [];
+let displayValue = "";
 
 for(i=0;i<10;i++){
     numberButtons[i] = document.querySelector(`#b${i}`)
 }
-numberButtons.forEach((element,index) => {
+numberButtons.forEach((element,index) => { //goona make this so that it doesnt get converted to a number till one of the operations is pressed
     element.addEventListener("click",() => {
         let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
-        temp = Number(temp);
-        console.log(temp);
+        displayValue += temp;
+        console.log(displayValue);
     });
 });
 
