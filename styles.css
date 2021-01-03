@@ -9,17 +9,22 @@
 
 .number{
     text-align: center;
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 6vh;
+
 }
 
 .function{
     text-align: center;
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 6vh;
 }
 
 #results{
     text-align: center;
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 6vh;
+
     align-items: center;
     overflow: scroll;
 }
@@ -44,6 +49,7 @@
 #bCon{
     width: 100%;
     display: flex;
+
     flex-wrap: wrap;
     justify-content: space-evenly;
     
