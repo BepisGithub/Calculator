@@ -84,22 +84,40 @@ functionButtons.forEach((element,index) => {
         temp = Array.from(temp);
         temp.splice(0,1);
         temp = temp.join("");
-    element.addEventListener("click", () => {
-        console.log(userInput);
-        userInput.push(Number(displayValue));
-        userInput.push(temp);
-        if(userInput.length==4){
-            let temp = userInput;
-            userInput = [];
-            userInput[0] = operate(temp[0],temp[1],temp[2]);
-            userInput[1] = temp[3];
-            displayValue = userInput[0];
-            resultsDisplay.textContent = displayValue;
 
+        switch(temp){
+            case "clear":
+                element.addEventListener("click", () => console.log("clear"));
+                break;
+            case "backspace":
+                element.addEventListener("click", () => console.log("backspace"));
+                break;
+            case "equal":
+                element.addEventListener("click", () => console.log("equal"));
+                break;
+            case "decimal":
+                element.addEventListener("click", () => console.log("decimal"));
+                break;
+            default:
+                element.addEventListener("click", () => {
+                    console.log(userInput);
+                    userInput.push(Number(displayValue));
+                    userInput.push(temp);
+                    if(userInput.length==4){
+                        let temp = userInput;
+                        userInput = [];
+                        userInput[0] = operate(temp[0],temp[1],temp[2]);
+                        userInput[1] = temp[3];
+                        displayValue = userInput[0];
+                        resultsDisplay.textContent = displayValue;
+                    }
+                    displayValue = "";
+                });
         }
 
-        displayValue = "";
-    })
+
+
+
 
 
 });
