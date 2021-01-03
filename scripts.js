@@ -30,6 +30,15 @@ function operate(a,operator,b){
 const body = document.querySelector("body");
 let numberButtons = [];
 let displayValue = "";
+const addButton = body.querySelector("#badd");
+const subtractButton = body.querySelector("#bsubtract");
+const multiplyButton = body.querySelector("#bmultiply");
+const divideButton = body.querySelector("#bdivide");
+const clearButton = body.querySelector("#bclear")
+const equalsButton = body.querySelector("#bequal")
+const backButton = body.querySelector("#bbackspace")
+const dotButton = body.querySelector("#bdecimal");
+let resultsDisplay = body.querySelector("#results")
 
 for(i=0;i<10;i++){
     numberButtons[i] = document.querySelector(`#b${i}`)
@@ -40,17 +49,9 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         temp = Array.from(temp);
         temp.splice(0,1);
         displayValue += temp;
-        console.log(displayValue);
+        // console.log(displayValue);
+        resultsDisplay.textContent = displayValue;
+
     });
 });
 
-
-const addButton = body.querySelector("#badd");
-const subtractButton = body.querySelector("#bsubtract");
-const multiplyButton = body.querySelector("#bmultiply");
-const divideButton = body.querySelector("#bdivide");
-const clearButton = body.querySelector("#bclear")
-const equalsButton = body.querySelector("#bequal")
-const backButton = body.querySelector("#bbackspace")
-const dotButton = body.querySelector("#bdecimal");
-let resultsDisplay = body.querySelector("#results")
