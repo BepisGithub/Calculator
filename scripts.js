@@ -71,7 +71,6 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         temp = Array.from(temp);
         temp.splice(0,1);
         displayValue += temp;
-        // console.log(displayValue);
         resultsDisplay.textContent = displayValue;
         scaleFontSize(resultsDisplay)
 
@@ -96,7 +95,6 @@ functionButtons.forEach((element,index) => {
             case "backspace":
                 element.addEventListener("click", () => {
                     let temp = displayValue.slice(-1);
-                    console.log(temp);
                     if(temp=="."){ //if the cleared value is a decimal
                         hasDecimal = false;
                     }
@@ -130,14 +128,6 @@ functionButtons.forEach((element,index) => {
                     }
 
                     hasDecimal = !(Number.isInteger(userInput[0]));
-                    console.log(hasDecimal);
-
-                    // userInput.forEach(item => {
-                    //     if(!(isNaN(item))){
-                    //         hasDecimal = Number.isInteger(item);
-                    //         console.log(hasDecimal);
-                    //     }
-                    // });
                 });
                 break;
             case "decimal":
