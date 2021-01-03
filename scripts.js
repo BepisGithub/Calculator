@@ -48,7 +48,6 @@ for(i=0;i<10;i++){
 functionButtons = [addButton,subtractButton,multiplyButton,divideButton,clearButton,backButton,equalsButton,dotButton];
 
 function scaleFontSize(element) {
-
     // Reset font-size to 100% to begin
     resultsDisplay.style.fontSize = "6vh";
     let i = 9;
@@ -59,7 +58,6 @@ function scaleFontSize(element) {
             i = 3;
             resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
             break;
-
         }
         resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
         i--;
@@ -118,16 +116,9 @@ functionButtons.forEach((element,index) => {
                         displayValue = userInput[0];
                         resultsDisplay.textContent = displayValue;
                     }
-                    
                     else{
                         resultsDisplay.textContent = "Error";
                     }
-            
-        
-
-
-
-
                 });
                 break;
             case "decimal":
