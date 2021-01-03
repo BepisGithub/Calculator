@@ -95,6 +95,11 @@ functionButtons.forEach((element,index) => {
                 break;
             case "backspace":
                 element.addEventListener("click", () => {
+                    let temp = displayValue.slice(-1);
+                    console.log(temp);
+                    if(temp=="."){ //if the cleared value is a decimal
+                        hasDecimal = false;
+                    }
                     displayValue = displayValue.substring(0,displayValue.length-1);
                     resultsDisplay.textContent = displayValue;
                 });
