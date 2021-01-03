@@ -41,4 +41,4 @@ const clearButton = body.querySelector("#bclear")
 const equalsButton = body.querySelector("#bequal")
 const backButton = body.querySelector("#bbackspace")
 const dotButton = body.querySelector("#bdecimal");
-
+let resultsDisplay = body.querySelector("#results")
