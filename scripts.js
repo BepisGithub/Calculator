@@ -106,6 +106,8 @@ functionButtons.forEach((element,index) => {
                 break;
             case "equal":
                 element.addEventListener("click", () => {
+                    
+                    
                     if(userInput.length==2){
                         userInput.push(Number(displayValue));
                         let temp = userInput;
@@ -126,11 +128,21 @@ functionButtons.forEach((element,index) => {
                     else{
                         resultsDisplay.textContent = "Error";
                     }
+
+                    hasDecimal = !(Number.isInteger(userInput[0]));
+                    console.log(hasDecimal);
+
+                    // userInput.forEach(item => {
+                    //     if(!(isNaN(item))){
+                    //         hasDecimal = Number.isInteger(item);
+                    //         console.log(hasDecimal);
+                    //     }
+                    // });
                 });
                 break;
             case "decimal":
                 element.addEventListener("click", () => {
-                    if(!hasDecimal){
+                    if(hasDecimal==false){
                         hasDecimal = true;
                         displayValue = displayValue + ".";
                         resultsDisplay.textContent = displayValue;
@@ -139,6 +151,7 @@ functionButtons.forEach((element,index) => {
                 break;
             default:
                 element.addEventListener("click", () => {
+                    hasDecimal = false;
                     console.table(userInput);
                     if(userInput.length==1){
                         userInput[0] = (Number(displayValue));
