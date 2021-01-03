@@ -100,16 +100,49 @@ functionButtons.forEach((element,index) => {
                 });
                 break;
             case "equal":
-                element.addEventListener("click", () => console.log("equal"));
+                element.addEventListener("click", () => {
+                    if(userInput.length==2){
+                        userInput.push(Number(displayValue));
+                        let temp = userInput;
+                        userInput = [];
+                        userInput[0] = operate(temp[0],temp[1],temp[2]);
+                        displayValue = userInput[0];
+                        displayValue = String(displayValue);
+                        resultsDisplay.textContent = displayValue;
+                        console.table(userInput);
+                    }else if(userInput.length==4){
+                        let temp = userInput;
+                        userInput = [];
+                        userInput[0] = operate(temp[0],temp[1],temp[2]);
+                        userInput[1] = temp[3];
+                        displayValue = userInput[0];
+                        resultsDisplay.textContent = displayValue;
+                    }
+                    
+                    else{
+                        resultsDisplay.textContent = "Error";
+                    }
+            
+        
+
+
+
+
+                });
                 break;
             case "decimal":
                 element.addEventListener("click", () => console.log("decimal"));
                 break;
             default:
                 element.addEventListener("click", () => {
-                    console.log(userInput);
-                    userInput.push(Number(displayValue));
+                    console.table(userInput);
+                    if(userInput.length==1){
+                        userInput[0] = (Number(displayValue));
+                    }else{
+                        userInput.push(Number(displayValue));
+                    }
                     userInput.push(temp);
+                    console.table(userInput);
                     if(userInput.length==4){
                         let temp = userInput;
                         userInput = [];
