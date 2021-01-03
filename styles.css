@@ -8,13 +8,11 @@
 }
 
 .number{
-    margin: 20% 0 0 0;
     text-align: center;
     font-size: 50px;
 }
 
 .function{
-    margin: 20% 0 0 0;
     text-align: center;
     font-size: 50px;
 }
@@ -26,14 +24,12 @@
 }
 
 #bclear,#bbackspace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 7vh;
     width: 35%;
     background-color: #046664;
-}
-
-#backText,#clearText{
-    position: relative;
-    bottom: 3vh;
 }
 
 #results{
@@ -49,15 +45,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    
 }
 
 #badd,#bsubtract,#bmultiply,#bdivide,#bequal,#bdecimal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 10vh;
     width: 10vh;
     background-color: #046664;
 }
 
 #b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b0{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 10vh;
     width: 10vh;
     background-color: tomato;
