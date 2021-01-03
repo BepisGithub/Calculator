@@ -31,6 +31,7 @@ const body = document.querySelector("body");
 let numberButtons = [];
 let functionButtons = [];
 let displayValue = "";
+let userInputs = [];
 const addButton = body.querySelector("#badd");
 const subtractButton = body.querySelector("#bsubtract");
 const multiplyButton = body.querySelector("#bmultiply");
@@ -79,9 +80,11 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
 });
 
 functionButtons.forEach((element,index) => {
-    element.addEventListener("click", () => {
-        let temp = element.getAttribute("id");
+    let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
+    element.addEventListener("click", () => {
+        userInputs.push(Number(displayValue));
+        displayValue = "";
     })
 });
