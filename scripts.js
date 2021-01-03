@@ -63,6 +63,15 @@ function scaleFontSize(element) {
         resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
         i--;
     }
+    while (resultsDisplay.scrollHeight > resultsDisplay.clientHeight) {
+        if(i<3){
+            i = 3;
+            resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
+            break;
+        }
+        resultsDisplay.style.fontSize = `${(6/10)*i}vh`;
+        i--;
+    }
 }
 
 numberButtons.forEach((element,index) => { //goona make this so that it doesnt get converted to a number till one of the operations is pressed
@@ -70,9 +79,16 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
+        if(temp==0 && userInput[userInput.length-1]=="divide"){
+            console.log("YOu tried to divide by 0");
+            resultsDisplay.textContent = "Can't divide by 0";
+            scaleFontSize(resultsDisplay);
+
+        }else{
         displayValue += temp;
         resultsDisplay.textContent = displayValue;
-        scaleFontSize(resultsDisplay)
+        scaleFontSize(resultsDisplay);
+        }
 
     });
 });
