@@ -87,10 +87,17 @@ functionButtons.forEach((element,index) => {
 
         switch(temp){
             case "clear":
-                element.addEventListener("click", () => console.log("clear"));
+                element.addEventListener("click", () => {
+                    displayValue = "";
+                    userInput = [];
+                    resultsDisplay.textContent = "Cleared!";
+                });
                 break;
             case "backspace":
-                element.addEventListener("click", () => console.log("backspace"));
+                element.addEventListener("click", () => {
+                    displayValue = displayValue.substring(0,displayValue.length-1);
+                    resultsDisplay.textContent = displayValue;
+                });
                 break;
             case "equal":
                 element.addEventListener("click", () => console.log("equal"));
