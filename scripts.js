@@ -33,6 +33,17 @@ let numberButtons = [];
 for(i=0;i<10;i++){
     numberButtons[i] = document.querySelector(`#b${i}`)
 }
+numberButtons.forEach((element,index) => {
+    element.addEventListener("click",() => {
+        let temp = element.getAttribute("id");
+        temp = Array.from(temp);
+        temp.splice(0,1);
+        temp = Number(temp);
+        console.log(temp);
+    });
+});
+
+
 const addButton = body.querySelector("#badd");
 const subtractButton = body.querySelector("#bsubtract");
 const multiplyButton = body.querySelector("#bmultiply");
