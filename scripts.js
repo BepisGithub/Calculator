@@ -80,9 +80,11 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         temp = Array.from(temp);
         temp.splice(0,1);
         if(temp==0 && userInput[userInput.length-1]=="divide"){
-            console.log("YOu tried to divide by 0");
             resultsDisplay.textContent = "Can't divide by 0";
             scaleFontSize(resultsDisplay);
+            displayValue = "";
+            userInput = [];
+            hasDecimal = false;
 
         }else{
         displayValue += temp;
