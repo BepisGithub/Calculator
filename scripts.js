@@ -33,4 +33,12 @@ let numberButtons = [];
 for(i=0;i<10;i++){
     numberButtons[i] = document.querySelector(`#b${i}`)
 }
-console.table(numberButtons);
+const addButton = body.querySelector("#badd");
+const subtractButton = body.querySelector("#bsubtract");
+const multiplyButton = body.querySelector("#bmultiply");
+const divideButton = body.querySelector("#bdivide");
+const clearButton = body.querySelector("#bclear")
+const equalsButton = body.querySelector("#bequal")
+const backButton = body.querySelector("#bbackspace")
+const dotButton = body.querySelector("#bdecimal");
+
