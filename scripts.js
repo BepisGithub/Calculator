@@ -29,6 +29,7 @@ function operate(a,operator,b){
 
 const body = document.querySelector("body");
 let numberButtons = [];
+let functionButtons = [];
 let displayValue = "";
 const addButton = body.querySelector("#badd");
 const subtractButton = body.querySelector("#bsubtract");
@@ -43,6 +44,7 @@ let resultsDisplay = body.querySelector("#results")
 for(i=0;i<10;i++){
     numberButtons[i] = document.querySelector(`#b${i}`)
 }
+functionButtons = [addButton,subtractButton,multiplyButton,divideButton,clearButton,backButton,equalsButton,dotButton];
 
 function scaleFontSize(element) {
 
@@ -76,3 +78,10 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
     });
 });
 
+functionButtons.forEach((element,index) => {
+    element.addEventListener("click", () => {
+        let temp = element.getAttribute("id");
+        temp = Array.from(temp);
+        temp.splice(0,1);
+    })
+});
