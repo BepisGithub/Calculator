@@ -27,6 +27,7 @@ function operate(a,operator,b){
     }
 }
 
+let hasDecimal = false;
 const body = document.querySelector("body");
 let numberButtons = [];
 let functionButtons = [];
@@ -88,6 +89,7 @@ functionButtons.forEach((element,index) => {
                 element.addEventListener("click", () => {
                     displayValue = "";
                     userInput = [];
+                    hasDecimal = false;
                     resultsDisplay.textContent = "Cleared!";
                 });
                 break;
@@ -122,7 +124,13 @@ functionButtons.forEach((element,index) => {
                 });
                 break;
             case "decimal":
-                element.addEventListener("click", () => console.log("decimal"));
+                element.addEventListener("click", () => {
+                    if(!hasDecimal){
+                        hasDecimal = true;
+                        displayValue = displayValue + ".";
+                        resultsDisplay.textContent = displayValue;
+                    }
+                });
                 break;
             default:
                 element.addEventListener("click", () => {
