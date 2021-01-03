@@ -110,7 +110,7 @@ functionButtons.forEach((element,index) => {
                         userInput.push(Number(displayValue));
                         let temp = userInput;
                         userInput = [];
-                        userInput[0] = operate(temp[0],temp[1],temp[2]);
+                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
                         displayValue = userInput[0];
                         displayValue = String(displayValue);
                         resultsDisplay.textContent = displayValue;
@@ -118,7 +118,7 @@ functionButtons.forEach((element,index) => {
                     }else if(userInput.length==4){
                         let temp = userInput;
                         userInput = [];
-                        userInput[0] = operate(temp[0],temp[1],temp[2]);
+                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
                         userInput[1] = temp[3];
                         displayValue = userInput[0];
                         resultsDisplay.textContent = displayValue;
@@ -153,7 +153,7 @@ functionButtons.forEach((element,index) => {
                     if(userInput.length==4){
                         let temp = userInput;
                         userInput = [];
-                        userInput[0] = operate(temp[0],temp[1],temp[2]);
+                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
                         userInput[1] = temp[3];
                         displayValue = userInput[0];
                         resultsDisplay.textContent = displayValue;
