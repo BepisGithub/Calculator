@@ -104,10 +104,14 @@ functionButtons.forEach((element,index) => {
         switch(temp){
             case "clear":
                 element.addEventListener("click", () => {
-                    displayValue = "";
-                    userInput = [];
-                    hasDecimal = false;
-                    resultsDisplay.textContent = "Cleared!";
+                    let inp = prompt("Are you sure you want to clear everything?","yes");
+                    inp.toLowerCase();
+                    if(inp==="yes"){
+                        displayValue = "";
+                        userInput = [];
+                        hasDecimal = false;
+                        resultsDisplay.textContent = "Cleared!";
+                    }
                 });
                 break;
             case "backspace":
