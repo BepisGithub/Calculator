@@ -169,7 +169,8 @@ functionButtons.forEach((element,index) => {
                         displayValue = "";
                         userInput = [];
                         hasDecimal = false;
-                        resultsDisplay.textContent = "Cleared!";
+                        // resultsDisplay.textContent = "Cleared!";
+                        draw("Cleared!");
                     }
                 });
                 break;
@@ -180,7 +181,8 @@ functionButtons.forEach((element,index) => {
                         hasDecimal = false;
                     }
                     displayValue = displayValue.substring(0,displayValue.length-1);
-                    resultsDisplay.textContent = displayValue;
+                    // resultsDisplay.textContent = displayValue;
+                    draw(displayValue);
                     scaleFontSize(resultsDisplay);
 
                 });
@@ -195,8 +197,8 @@ functionButtons.forEach((element,index) => {
                         //
                             if(userInput[2]===0 && userInput[1]=="divide"){
                                 console.log("Can't divide by 0");
-                                resultsDisplay.textContent = "Can't divide by 0";
-                                scaleFontSize(resultsDisplay);
+                                // resultsDisplay.textContent = "Can't divide by 0";
+                                draw("Can't divide by 0");
                             }else{
                                 console.log(userInput);
                         //
@@ -205,8 +207,8 @@ functionButtons.forEach((element,index) => {
                         userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
                         displayValue = userInput[0];
                         displayValue = String(displayValue);
-                        resultsDisplay.textContent = displayValue;
-                        scaleFontSize(resultsDisplay);
+                        // resultsDisplay.textContent = displayValue;
+                        draw(displayValue);
                         }
                     }
                     // else if(userInput.length==4){
@@ -232,8 +234,8 @@ functionButtons.forEach((element,index) => {
                     if(hasDecimal==false){
                         hasDecimal = true;
                         displayValue = displayValue + ".";
-                        resultsDisplay.textContent = displayValue;
-                        scaleFontSize(resultsDisplay);
+                        // resultsDisplay.textContent = displayValue;
+                        draw(displayValue);
 
                     }
                 });
@@ -254,16 +256,16 @@ functionButtons.forEach((element,index) => {
                     if(userInput.length==4){
                         if(userInput[2]===0 && userInput[1]=="divide"){
                             console.log("Can't divide by 0");
-                            resultsDisplay.textContent = "Can't divide by 0";
-                            scaleFontSize(resultsDisplay);
+                            // resultsDisplay.textContent = "Can't divide by 0";
+                            draw("Can't divide by 0");
                         }else{
                         let temp = userInput;
                         userInput = [];
                         userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
                         userInput[1] = temp[3];
                         displayValue = userInput[0];
-                        resultsDisplay.textContent = displayValue;
-                        scaleFontSize(resultsDisplay);
+                        // resultsDisplay.textContent = displayValue;
+                        draw(displayValue);
                         }
                         
                     }
