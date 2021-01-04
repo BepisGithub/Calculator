@@ -95,17 +95,54 @@ function draw(val){
                 }
             });
 
-            let tlength = temp.length-4;
             let periodPos = temp.indexOf(".");
             console.log(periodPos);
             console.log(hasDecimal);
-            
 
+            if(hasDecimal){
+                //could seperate to a string
+                
+                //[100.02]
+                //periodpos=3
+                //two arrays
+                //one including the dot and whats beyond it
+                //one for everything before
+                //the one before is adjusted with the while loop
+                //the one including is then appended
+                
+                let arrBefore,arrWith;
+                arrWith = temp.filter((item,index) =>{
+                    if(index>=periodPos){
+                        return true;
+                    }
+                });
+                arrBefore = temp.filter((item,index)=>{
+                    if(index<periodPos){
+                        return true;
+                    }
+                });
+                let tlength = arrBefore.length-4;
 
-            while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
-                temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
-                tlength -= 3;
-            };
+                while(!(arrBefore[tlength]===undefined) && !(tlength < (-1*(arrBefore.length)))){
+                    arrBefore.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
+                    tlength -= 3;
+                };
+                console.log(arrWith);
+                console.log(arrBefore);
+                temp = [...arrBefore,...arrWith];
+                console.log(temp);
+
+                
+                
+            }
+            else{
+                let tlength = temp.length-4;
+
+                while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
+                    temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
+                    tlength -= 3;
+                };
+            }
 
             temp = temp.join("");
 
