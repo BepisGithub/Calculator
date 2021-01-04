@@ -74,14 +74,14 @@ function scaleFontSize(element) {
     }
 }
 
-
+//need to make it so that it only adds a comma to the part before the e
 function draw(val){
     if(isNaN(val)){
         resultsDisplay.textContent = val;
     }else{
         let temp = Array.from(val); //its including the commas in the array so
         temp = temp.filter(item => {
-            if (!(isNaN(item))){
+            if (!(isNaN(item)) || item==="e"){
                 return true;
             }
 
