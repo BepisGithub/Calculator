@@ -89,20 +89,21 @@ function draw(val){
             temp = temp.join("");
             resultsDisplay.textContent = temp;
         }else{
-
             temp = temp.filter(item => {
                 if (!(isNaN(item)) || item=="."){
                     return true;
                 }
-    
-            })
+            });
 
             let tlength = temp.length-4;
-            while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
+            let periodPos = temp.indexOf(".");
+            while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length))) && !((tlength+1) > periodPos)){
                 temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                 tlength -= 3;
             };
+
             temp = temp.join("");
+
             resultsDisplay.textContent = temp;
 
         }   
