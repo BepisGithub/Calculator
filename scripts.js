@@ -100,36 +100,48 @@ window.addEventListener('keydown', (e) => { //need to check if its a number or f
         let temp = new MouseEvent("click");
         numberButtons[e.key].dispatchEvent(temp);
     }else{
+        let temp = new MouseEvent("click");
         let t2 = "";
         switch(e.key){
             case "+":
                 t2 = "add";
+                functionButtons[0].dispatchEvent(temp);
                 console.log(t2);
+                console.log(functionButtons);
                 break;
             case "-":
                 t2 = "subtract";
+                functionButtons[1].dispatchEvent(temp);
                 console.log(t2);
 
                 break;
             case "*":
                 t2 = "multiply";
+                functionButtons[2].dispatchEvent(temp);
                 console.log(t2);
 
                 break;
             case "/":
                 t2 = "divide";
+                functionButtons[3].dispatchEvent(temp);
                 console.log(t2);
                 break;
             case ".":
                 t2 = "decimal";
+                functionButtons[7].dispatchEvent(temp);
+
                 console.log(t2);
                 break;
             case "Enter":
                 t2 = "equal";
+                functionButtons[6].dispatchEvent(temp);
+
                 console.log(t2);
                 break;
             case "Backspace":
                 t2 = "backspace";
+                functionButtons[5].dispatchEvent(temp);
+
                 console.log(t2);
                 break;
             default:
