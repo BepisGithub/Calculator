@@ -74,14 +74,41 @@ function scaleFontSize(element) {
     }
 }
 
+
+function draw(val){
+    if(isNaN(val)){
+        resultsDisplay.textContent = val;
+    }else{
+        let temp = Array.from(val); //its including the commas in the array so
+        temp = temp.filter(item => {
+            if (!(isNaN(item))){
+                return true;
+            }
+
+        })
+        let tlength = temp.length-4;
+        while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
+            temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
+            tlength -= 3;
+        };
+        temp = temp.join("");
+        resultsDisplay.textContent = temp;
+    }
+    scaleFontSize(resultsDisplay);
+
+
+
+}
+
 numberButtons.forEach((element,index) => { //goona make this so that it doesnt get converted to a number till one of the operations is pressed
     element.addEventListener("click",() => {
         let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
         displayValue += temp;
-        resultsDisplay.textContent = displayValue;
-        scaleFontSize(resultsDisplay);
+        // resultsDisplay.textContent = displayValue;
+        // scaleFontSize(resultsDisplay);
+        draw(displayValue);
 
     });
 });
