@@ -1,3 +1,3 @@
-Creating a calculator using JS and HTML.
+This is a calculator I built using HTML, CSS and vanilla JS. 
 
-It's going to have a GUI.
+It has keyboard support.
