@@ -78,7 +78,7 @@ function scaleFontSize(element) {
 function draw(val){
     if(isNaN(val)){
         resultsDisplay.textContent = val;
-    }else{  
+    }else{
         let temp = Array.from(val); //its including the commas in the array so
         //array
         //if array has e
