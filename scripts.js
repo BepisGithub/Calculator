@@ -95,6 +95,14 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
     });
 });
 
+window.addEventListener('keydown', (e) => { //need to check if its a number or function
+    if(e.key<=9 && e.key>=0){ //if its a number
+        let temp = new MouseEvent("click");
+        numberButtons[e.key].dispatchEvent(temp);
+    }
+    
+});
+
 functionButtons.forEach((element,index) => {
     let temp = element.getAttribute("id");
         temp = Array.from(temp);
