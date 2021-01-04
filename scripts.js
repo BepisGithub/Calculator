@@ -108,13 +108,17 @@ window.addEventListener('keydown', (e) => { //need to check if its a number or f
             case ".":
                 functionButtons[7].dispatchEvent(temp);
                 break;
-            case "Enter":
+            case "=":
                 functionButtons[6].dispatchEvent(temp);
                 break;
             case "Backspace":
                 functionButtons[5].dispatchEvent(temp);
                 break;
+            case "Delete":
+                functionButtons[4].dispatchEvent(temp);
+                break;
             default:
+                console.log(e.key);
 
         }
     }
