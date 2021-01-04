@@ -78,25 +78,34 @@ function scaleFontSize(element) {
 function draw(val){
     if(isNaN(val)){
         resultsDisplay.textContent = val;
-    }else{
+    }else{  
         let temp = Array.from(val); //its including the commas in the array so
-        temp = temp.filter(item => {
-            if (!(isNaN(item)) || item==="e"){
-                return true;
-            }
+        //array
+        //if array has e
+        //dont do anything
+        let hasE = temp.includes("e");
+        if(hasE){
+            temp = temp.join("");
+            resultsDisplay.textContent = temp;
+        }else{
+            temp = temp.filter(item => {
+                if (!(isNaN(item))){
+                    return true;
+                }
+    
+            })
+            let tlength = temp.length-4;
+            while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
+                temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
+                tlength -= 3;
+            };
+            temp = temp.join("");
+            resultsDisplay.textContent = temp;
 
-        })
-        let tlength = temp.length-4;
-        while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
-            temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
-            tlength -= 3;
-        };
-        temp = temp.join("");
-        resultsDisplay.textContent = temp;
+        }   
     }
     scaleFontSize(resultsDisplay);
 
-//it doesnt work yet
 
 }
 
