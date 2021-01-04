@@ -79,6 +79,7 @@ function draw(val){
     if(isNaN(val)){
         resultsDisplay.textContent = val;
     }else{
+
         let temp = Array.from(val); //its including the commas in the array so
         //array
         //if array has e
@@ -88,12 +89,14 @@ function draw(val){
             temp = temp.join("");
             resultsDisplay.textContent = temp;
         }else{
+
             temp = temp.filter(item => {
-                if (!(isNaN(item))){
+                if (!(isNaN(item)) || item=="."){
                     return true;
                 }
     
             })
+
             let tlength = temp.length-4;
             while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
                 temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
@@ -156,7 +159,6 @@ window.addEventListener('keydown', (e) => { //need to check if its a number or f
                 functionButtons[4].dispatchEvent(temp);
                 break;
             default:
-                console.log(e.key);
 
         }
     }
@@ -207,11 +209,9 @@ functionButtons.forEach((element,index) => {
                         userInput.push(Number(displayValue));
                         //
                             if(userInput[2]===0 && userInput[1]=="divide"){
-                                console.log("Can't divide by 0");
                                 // resultsDisplay.textContent = "Can't divide by 0";
                                 draw("Can't divide by 0");
                             }else{
-                                console.log(userInput);
                         //
                         let temp = userInput;
                         userInput = [];
@@ -254,19 +254,16 @@ functionButtons.forEach((element,index) => {
             default:
                 element.addEventListener("click", () => {
                     hasDecimal = false;
-                    console.table(userInput);
                     if(userInput.length==1){
                         userInput[0] = (Number(displayValue));
                     }else{
                         userInput.push(Number(displayValue));
                     }
                     userInput.push(temp);
-                    console.table(userInput);
 
 
                     if(userInput.length==4){
                         if(userInput[2]===0 && userInput[1]=="divide"){
-                            console.log("Can't divide by 0");
                             // resultsDisplay.textContent = "Can't divide by 0";
                             draw("Can't divide by 0");
                         }else{
