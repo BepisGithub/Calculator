@@ -159,6 +159,10 @@ draw("LD's calculator project!");
 
 numberButtons.forEach((element,index) => { //goona make this so that it doesnt get converted to a number till one of the operations is pressed
     element.addEventListener("click",() => {
+        let hasE = displayValue.includes("e");
+        if(hasE){
+            draw("This calculator wasn't meant to edit values this high. Cease!");
+        }else{
         let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
@@ -166,6 +170,7 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         // resultsDisplay.textContent = displayValue;
         // scaleFontSize(resultsDisplay);
         draw(displayValue);
+        }
 
     });
 });
