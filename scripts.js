@@ -97,6 +97,11 @@ function draw(val){
 
             let tlength = temp.length-4;
             let periodPos = temp.indexOf(".");
+            console.log(periodPos);
+            console.log(hasDecimal);
+            
+
+
             while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
                 temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                 tlength -= 3;
@@ -220,6 +225,8 @@ functionButtons.forEach((element,index) => {
                         displayValue = userInput[0];
                         displayValue = String(displayValue);
                         // resultsDisplay.textContent = displayValue;
+                        hasDecimal = !(Number.isInteger(userInput[0]));
+
                         draw(displayValue);
                         }
                     }
@@ -234,11 +241,12 @@ functionButtons.forEach((element,index) => {
 
                     // }
                     else{
+                        hasDecimal = !(Number.isInteger(userInput[0]));
+
                         resultsDisplay.textContent = "Error";
                     }
                     
 
-                    hasDecimal = !(Number.isInteger(userInput[0]));
                 });
                 break;
             case "decimal":
