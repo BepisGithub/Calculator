@@ -96,7 +96,7 @@ function draw(val){
     }
     scaleFontSize(resultsDisplay);
 
-
+//it doesnt work yet
 
 }
 
