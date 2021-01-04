@@ -78,6 +78,7 @@
 
 #Calc{
     display: flex;
+    border-radius: 5%  5%;
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
