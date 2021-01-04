@@ -30,6 +30,7 @@
 }
 
 #bclear,#bbackspace{
+    border-radius: 5px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,6 +41,7 @@
 
 #results{
     display: flex;
+    border-radius: 5px 5px;
     height: 12vh;
     width: 80%;
     background-color: whitesmoke;
@@ -58,6 +60,7 @@
 #badd,#bsubtract,#bmultiply,#bdivide,#bequal,#bdecimal{
     display: flex;
     align-items: center;
+    border-radius: 5px 5px;
     justify-content: center;
     height: 10vh;
     width: 10vh;
@@ -66,6 +69,7 @@
 
 #b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b0{
     display: flex;
+    border-radius: 5px 5px;
     align-items: center;
     justify-content: center;
     height: 10vh;
@@ -78,7 +82,7 @@
 
 #Calc{
     display: flex;
-    border-radius: 5%  5%;
+    border-radius: 5px  5px;
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
