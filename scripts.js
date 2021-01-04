@@ -79,18 +79,9 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
-        if(temp==0 && userInput[userInput.length-1]=="divide"){ //issue here
-            resultsDisplay.textContent = "Can't divide by 0";
-            scaleFontSize(resultsDisplay);
-            displayValue = "";
-            userInput = [];
-            hasDecimal = false;
-
-        }else{
         displayValue += temp;
         resultsDisplay.textContent = displayValue;
         scaleFontSize(resultsDisplay);
-        }
 
     });
 });
@@ -137,7 +128,7 @@ functionButtons.forEach((element,index) => {
         temp = Array.from(temp);
         temp.splice(0,1);
         temp = temp.join("");
-
+    
         switch(temp){
             case "clear":
                 element.addEventListener("click", () => {
@@ -165,10 +156,19 @@ functionButtons.forEach((element,index) => {
                 break;
             case "equal":
                 element.addEventListener("click", () => {
-                    
-                    
+
+
+
                     if(userInput.length==2){
                         userInput.push(Number(displayValue));
+                        //
+                            if(userInput[2]===0 && userInput[1]=="divide"){
+                                console.log("Can't divide by 0");
+                                resultsDisplay.textContent = "Can't divide by 0";
+                                scaleFontSize(resultsDisplay);
+                            }else{
+                                console.log(userInput);
+                        //
                         let temp = userInput;
                         userInput = [];
                         userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
@@ -176,19 +176,22 @@ functionButtons.forEach((element,index) => {
                         displayValue = String(displayValue);
                         resultsDisplay.textContent = displayValue;
                         scaleFontSize(resultsDisplay);
-                    }else if(userInput.length==4){
-                        let temp = userInput;
-                        userInput = [];
-                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
-                        userInput[1] = temp[3];
-                        displayValue = userInput[0];
-                        resultsDisplay.textContent = displayValue;
-                        scaleFontSize(resultsDisplay);
-
+                        }
                     }
+                    // else if(userInput.length==4){
+                    //     let temp = userInput;
+                    //     userInput = [];
+                    //     userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
+                    //     userInput[1] = temp[3];
+                    //     displayValue = userInput[0];
+                    //     resultsDisplay.textContent = displayValue;
+                    //     scaleFontSize(resultsDisplay);
+
+                    // }
                     else{
                         resultsDisplay.textContent = "Error";
                     }
+                    
 
                     hasDecimal = !(Number.isInteger(userInput[0]));
                 });
@@ -215,7 +218,14 @@ functionButtons.forEach((element,index) => {
                     }
                     userInput.push(temp);
                     console.table(userInput);
+
+
                     if(userInput.length==4){
+                        if(userInput[2]===0 && userInput[1]=="divide"){
+                            console.log("Can't divide by 0");
+                            resultsDisplay.textContent = "Can't divide by 0";
+                            scaleFontSize(resultsDisplay);
+                        }else{
                         let temp = userInput;
                         userInput = [];
                         userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
@@ -223,7 +233,7 @@ functionButtons.forEach((element,index) => {
                         displayValue = userInput[0];
                         resultsDisplay.textContent = displayValue;
                         scaleFontSize(resultsDisplay);
-
+                        }
                         
                     }
                     displayValue = "";
