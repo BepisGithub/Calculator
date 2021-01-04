@@ -122,6 +122,8 @@ functionButtons.forEach((element,index) => {
                     }
                     displayValue = displayValue.substring(0,displayValue.length-1);
                     resultsDisplay.textContent = displayValue;
+                    scaleFontSize(resultsDisplay);
+
                 });
                 break;
             case "equal":
@@ -136,7 +138,7 @@ functionButtons.forEach((element,index) => {
                         displayValue = userInput[0];
                         displayValue = String(displayValue);
                         resultsDisplay.textContent = displayValue;
-                        console.table(userInput);
+                        scaleFontSize(resultsDisplay);
                     }else if(userInput.length==4){
                         let temp = userInput;
                         userInput = [];
@@ -144,6 +146,8 @@ functionButtons.forEach((element,index) => {
                         userInput[1] = temp[3];
                         displayValue = userInput[0];
                         resultsDisplay.textContent = displayValue;
+                        scaleFontSize(resultsDisplay);
+
                     }
                     else{
                         resultsDisplay.textContent = "Error";
@@ -158,6 +162,8 @@ functionButtons.forEach((element,index) => {
                         hasDecimal = true;
                         displayValue = displayValue + ".";
                         resultsDisplay.textContent = displayValue;
+                        scaleFontSize(resultsDisplay);
+
                     }
                 });
                 break;
@@ -179,6 +185,9 @@ functionButtons.forEach((element,index) => {
                         userInput[1] = temp[3];
                         displayValue = userInput[0];
                         resultsDisplay.textContent = displayValue;
+                        scaleFontSize(resultsDisplay);
+
+                        
                     }
                     displayValue = "";
                 });
