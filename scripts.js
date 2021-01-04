@@ -99,9 +99,47 @@ window.addEventListener('keydown', (e) => { //need to check if its a number or f
     if(e.key<=9 && e.key>=0){ //if its a number
         let temp = new MouseEvent("click");
         numberButtons[e.key].dispatchEvent(temp);
+    }else{
+        let t2 = "";
+        switch(e.key){
+            case "+":
+                t2 = "add";
+                console.log(t2);
+                break;
+            case "-":
+                t2 = "subtract";
+                console.log(t2);
+
+                break;
+            case "*":
+                t2 = "multiply";
+                console.log(t2);
+
+                break;
+            case "/":
+                t2 = "divide";
+                console.log(t2);
+                break;
+            case ".":
+                t2 = "decimal";
+                console.log(t2);
+                break;
+            case "Enter":
+                t2 = "equal";
+                console.log(t2);
+                break;
+            case "Backspace":
+                t2 = "backspace";
+                console.log(t2);
+                break;
+            default:
+                console.log(e.key);
+        }
     }
     
 });
+
+
 
 functionButtons.forEach((element,index) => {
     let temp = element.getAttribute("id");
