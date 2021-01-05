@@ -166,7 +166,11 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         let temp = element.getAttribute("id");
         temp = Array.from(temp);
         temp.splice(0,1);
+        if(displayValue=="0"){
+            displayValue = temp;
+        }else{
         displayValue += temp;
+        }
         // resultsDisplay.textContent = displayValue;
         // scaleFontSize(resultsDisplay);
         draw(displayValue);
