@@ -79,8 +79,11 @@ function draw(val){
     if(isNaN(val)){
         resultsDisplay.textContent = val;
     }else{
-
         let temp = Array.from(val); //its including the commas in the array so
+        if(temp.length>16){
+            resultsDisplay.textContent = "Number out of range, precise calculations begin to break at this point";
+        }else{
+
         //array
         //if array has e
         //dont do anything
@@ -147,6 +150,7 @@ function draw(val){
             temp = temp.join("");
 
             resultsDisplay.textContent = temp;
+        }
 
         }   
     }
@@ -163,14 +167,14 @@ numberButtons.forEach((element,index) => { //goona make this so that it doesnt g
         if(hasE){
             draw("This calculator wasn't meant to edit values this high. Cease!");
         }else{
-        let temp = element.getAttribute("id");
-        temp = Array.from(temp);
-        temp.splice(0,1);
-        if(displayValue=="0"){
-            displayValue = temp;
-        }else{
-        displayValue += temp;
-        }
+            let temp = element.getAttribute("id");
+            temp = Array.from(temp);
+            temp.splice(0,1);
+            if(displayValue=="0"){
+                displayValue = temp;
+            }else{
+                displayValue += temp;
+            }
         // resultsDisplay.textContent = displayValue;
         // scaleFontSize(resultsDisplay);
         draw(displayValue);
