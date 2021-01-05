@@ -95,17 +95,15 @@ function draw(val){
             temp = temp.join("");
             resultsDisplay.textContent = temp;
         }else{
-            console.log(temp);
 
             temp = temp.filter(item => {
                 if (!(isNaN(item)) || item=="." || item=="-"){
                     return true;
                 }
             });
-            console.log(temp);
 
             let periodPos = temp.indexOf(".");
-
+            console.log(temp);
             if(hasDecimal){
                 //could seperate to a string
                 
@@ -126,10 +124,11 @@ function draw(val){
 
 
                 arrBefore = temp.filter((item,index)=>{
-                    if(index<periodPos){
+                    if(index<periodPos && item!=="-"){
                         return true;
                     }
                 });
+                console.log(arrBefore);
                 if(arrWith.length>3){
                     resultsDisplay.textContent = "Decimal value out of range. Continuing to calculate will round";
 
@@ -146,11 +145,20 @@ function draw(val){
                 
             }
             else{
+                let clone = temp;
+                temp = temp.filter(item => {
+                    if(item!=="-"){
+                        return true;
+                    }
+                });
                 let tlength = temp.length-4;
                 while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
                     temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                     tlength -= 3;
                 };
+                if(clone[0]=="-"){
+                    temp.unshift("-");
+                }
                 temp = temp.join("");
                 resultsDisplay.textContent = temp;
             }
