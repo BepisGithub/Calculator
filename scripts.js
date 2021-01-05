@@ -113,7 +113,6 @@ function draw(val){
                 //one for everything before
                 //the one before is adjusted with the while loop
                 //the one including is then appended
-                console.log(temp);
                 
                 let arrBefore,arrWith;
                 arrWith = temp.filter((item,index) =>{
@@ -128,7 +127,15 @@ function draw(val){
                         return true;
                     }
                 });
-                console.log(arrBefore);
+
+                //if has a negative
+
+                let clone = arrBefore;
+                arrBefore = arrBefore.filter(item =>{
+                    if(item!=="-"){
+                        return true;
+                    }
+                });
                 if(arrWith.length>3){
                     resultsDisplay.textContent = "Decimal value out of range. Continuing to calculate will round";
 
@@ -138,13 +145,18 @@ function draw(val){
                         arrBefore.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                         tlength -= 3;
                     };
+                    if(clone[0]=="-"){
+                        arrBefore.unshift("-");
+                    }
                     temp = [...arrBefore,...arrWith];
+                    
                     temp = temp.join("");
                     resultsDisplay.textContent = temp;
                 }
                 
             }
             else{
+
                 let clone = temp;
                 temp = temp.filter(item => {
                     if(item!=="-"){
