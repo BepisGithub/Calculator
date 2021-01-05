@@ -82,9 +82,10 @@ function draw(val){
     if(isNaN(val)){
         resultsDisplay.textContent = val;
     }else{
+        console.log(val);
         let temp = Array.from(val); //its including the commas in the array so
         let hasE = temp.includes("e");
-        if(temp.length>16){ //|| (hasDecimal && temp.length >)
+        if(temp.length>16 || hasE){ //|| (hasDecimal && temp.length >)
             resultsDisplay.textContent = "Number out of range, precise calculations begin to break at this point";
         }else{
 
@@ -128,7 +129,7 @@ function draw(val){
                     }
                 });
                 if(arrWith.length>3){
-                    resultsDisplay.textContent = "Decimal value out of range";
+                    resultsDisplay.textContent = "Decimal value out of range. Continuing to calculate will round";
 
                 }else{
                     let tlength = arrBefore.length-4;
