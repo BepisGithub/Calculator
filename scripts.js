@@ -79,11 +79,9 @@ function scaleFontSize(element) {
 
 //need to make it so that it only adds a comma to the part before the e
 function draw(val){
-    console.log(hasDecimal);
     if(isNaN(val)){
         resultsDisplay.textContent = val;
     }else{
-        console.log(val);
         let temp = Array.from(val); //its including the commas in the array so
         let hasE = temp.includes("e");
         if(temp.length>16 || hasE){ //|| (hasDecimal && temp.length >)
