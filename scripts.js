@@ -79,6 +79,7 @@ function scaleFontSize(element) {
 
 //need to make it so that it only adds a comma to the part before the e
 function draw(val){
+    console.log(hasDecimal);
     if(isNaN(val)){
         resultsDisplay.textContent = val;
     }else{
@@ -293,7 +294,12 @@ functionButtons.forEach((element,index) => {
 
                     // }
                     else{
+                        if(userInput[0]!==undefined){
                         hasDecimal = !(Number.isInteger(userInput[0]));
+                        }
+                        //
+
+
                         resultsDisplay.textContent = "Error";
                     }
                 });
