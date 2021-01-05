@@ -141,6 +141,8 @@ function draw(val){
                     console.log(arrBefore);
                     temp = [...arrBefore,...arrWith];
                     console.log(temp);
+                    temp = temp.join("");
+                    resultsDisplay.textContent = temp;
                 }
                 
             }
@@ -150,10 +152,11 @@ function draw(val){
                     temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                     tlength -= 3;
                 };
+                temp = temp.join("");
+                resultsDisplay.textContent = temp;
             }
 
-            temp = temp.join("");
-            resultsDisplay.textContent = temp;
+
         }
 
         }   
