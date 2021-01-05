@@ -80,14 +80,14 @@ function draw(val){
         resultsDisplay.textContent = val;
     }else{
         let temp = Array.from(val); //its including the commas in the array so
-        if(temp.length>16){
+        let hasE = temp.includes("e");
+        if(temp.length>16){ //|| (hasDecimal && temp.length >)
             resultsDisplay.textContent = "Number out of range, precise calculations begin to break at this point";
         }else{
 
         //array
         //if array has e
         //dont do anything
-        let hasE = temp.includes("e");
         if(hasE){
             temp = temp.join("");
             resultsDisplay.textContent = temp;
@@ -119,6 +119,8 @@ function draw(val){
                         return true;
                     }
                 });
+                
+
                 arrBefore = temp.filter((item,index)=>{
                     if(index<periodPos){
                         return true;
@@ -262,26 +264,20 @@ functionButtons.forEach((element,index) => {
                 break;
             case "equal":
                 element.addEventListener("click", () => {
-
-
-
                     if(userInput.length==2){
                         userInput.push(Number(displayValue));
-                        //
                             if(userInput[2]===0 && userInput[1]=="divide"){
                                 // resultsDisplay.textContent = "Can't divide by 0";
                                 draw("Can't divide by 0");
                             }else{
-                        //
-                        let temp = userInput;
-                        userInput = [];
-                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(2));
-                        displayValue = userInput[0];
-                        displayValue = String(displayValue);
-                        // resultsDisplay.textContent = displayValue;
-                        hasDecimal = !(Number.isInteger(userInput[0]));
-
-                        draw(displayValue);
+                                let temp = userInput;
+                                userInput = [];
+                                userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(2));
+                                displayValue = userInput[0];
+                                displayValue = String(displayValue);
+                                // resultsDisplay.textContent = displayValue;
+                                hasDecimal = !(Number.isInteger(userInput[0]));
+                                draw(displayValue);
                         }
                     }
                     // else if(userInput.length==4){
@@ -296,11 +292,8 @@ functionButtons.forEach((element,index) => {
                     // }
                     else{
                         hasDecimal = !(Number.isInteger(userInput[0]));
-
                         resultsDisplay.textContent = "Error";
                     }
-                    
-
                 });
                 break;
             case "decimal":
@@ -314,7 +307,6 @@ functionButtons.forEach((element,index) => {
                         displayValue = displayValue + ".";
                         // resultsDisplay.textContent = displayValue;
                         draw(displayValue);
-
                     }
                 }
                 });
@@ -328,8 +320,6 @@ functionButtons.forEach((element,index) => {
                         userInput.push(Number(displayValue));
                     }
                     userInput.push(temp);
-
-
                     if(userInput.length==4){
                         if(userInput[2]===0 && userInput[1]=="divide"){
                             // resultsDisplay.textContent = "Can't divide by 0";
@@ -343,7 +333,6 @@ functionButtons.forEach((element,index) => {
                         // resultsDisplay.textContent = displayValue;
                         draw(displayValue);
                         }
-                        
                     }
                     displayValue = "";
                 });
