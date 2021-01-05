@@ -237,6 +237,10 @@ functionButtons.forEach((element,index) => {
                 break;
             case "backspace":
                 element.addEventListener("click", () => {
+                    let hasE = displayValue.includes("e");
+                    if(hasE){
+                        draw("This calculator wasn't meant to edit values this high. Cease!");
+                    }else{
                     let temp = displayValue.slice(-1);
                     if(temp=="."){ //if the cleared value is a decimal
                         hasDecimal = false;
@@ -244,7 +248,7 @@ functionButtons.forEach((element,index) => {
                     displayValue = displayValue.substring(0,displayValue.length-1);
                     // resultsDisplay.textContent = displayValue;
                     draw(displayValue);
-                    scaleFontSize(resultsDisplay);
+                    }
 
                 });
                 break;
@@ -293,6 +297,10 @@ functionButtons.forEach((element,index) => {
                 break;
             case "decimal":
                 element.addEventListener("click", () => {
+                    let hasE = displayValue.includes("e");
+                    if(hasE){
+                        draw("This calculator wasn't meant to edit values this high. Cease!");
+                    }else{
                     if(hasDecimal==false){
                         hasDecimal = true;
                         displayValue = displayValue + ".";
@@ -300,6 +308,7 @@ functionButtons.forEach((element,index) => {
                         draw(displayValue);
 
                     }
+                }
                 });
                 break;
             default:
