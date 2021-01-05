@@ -99,8 +99,6 @@ function draw(val){
             });
 
             let periodPos = temp.indexOf(".");
-            console.log(periodPos);
-            console.log(hasDecimal);
 
             if(hasDecimal){
                 //could seperate to a string
@@ -126,9 +124,7 @@ function draw(val){
                         return true;
                     }
                 });
-                console.log(arrWith.length);
                 if(arrWith.length>3){
-                    console.log("out of range");
                     resultsDisplay.textContent = "Decimal value out of range";
 
                 }else{
@@ -137,10 +133,7 @@ function draw(val){
                         arrBefore.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                         tlength -= 3;
                     };
-                    console.log(arrWith);
-                    console.log(arrBefore);
                     temp = [...arrBefore,...arrWith];
-                    console.log(temp);
                     temp = temp.join("");
                     resultsDisplay.textContent = temp;
                 }
