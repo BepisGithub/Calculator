@@ -8,3 +8,6 @@ mathmatics. Values beyond a certain range would not respond properly to calculat
 
 To fix this, I have made the calculator throw an error if the value is too high 
 or attempting to be precise beyond what the calculator can handle.
+
+The calculator doesn't support entering in your own negative numbers because
+I didn't want to add another button.
