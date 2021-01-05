@@ -103,7 +103,6 @@ function draw(val){
             });
 
             let periodPos = temp.indexOf(".");
-            console.log(temp);
             if(hasDecimal){
                 //could seperate to a string
                 
@@ -114,6 +113,7 @@ function draw(val){
                 //one for everything before
                 //the one before is adjusted with the while loop
                 //the one including is then appended
+                console.log(temp);
                 
                 let arrBefore,arrWith;
                 arrWith = temp.filter((item,index) =>{
@@ -124,7 +124,7 @@ function draw(val){
 
 
                 arrBefore = temp.filter((item,index)=>{
-                    if(index<periodPos && item!=="-"){
+                    if(index<periodPos || item=="-"){
                         return true;
                     }
                 });
