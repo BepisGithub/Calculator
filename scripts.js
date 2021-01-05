@@ -119,30 +119,33 @@ function draw(val){
                         return true;
                     }
                 });
-                
+
 
                 arrBefore = temp.filter((item,index)=>{
                     if(index<periodPos){
                         return true;
                     }
                 });
-                let tlength = arrBefore.length-4;
+                console.log(arrWith.length);
+                if(arrWith.length>3){
+                    console.log("out of range");
+                    resultsDisplay.textContent = "Decimal value out of range";
 
-                while(!(arrBefore[tlength]===undefined) && !(tlength < (-1*(arrBefore.length)))){
-                    arrBefore.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
-                    tlength -= 3;
-                };
-                console.log(arrWith);
-                console.log(arrBefore);
-                temp = [...arrBefore,...arrWith];
-                console.log(temp);
-
-                
+                }else{
+                    let tlength = arrBefore.length-4;
+                    while(!(arrBefore[tlength]===undefined) && !(tlength < (-1*(arrBefore.length)))){
+                        arrBefore.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
+                        tlength -= 3;
+                    };
+                    console.log(arrWith);
+                    console.log(arrBefore);
+                    temp = [...arrBefore,...arrWith];
+                    console.log(temp);
+                }
                 
             }
             else{
                 let tlength = temp.length-4;
-
                 while(!(temp[tlength]===undefined) && !(tlength < (-1*(temp.length)))){
                     temp.splice((tlength+1),0,","); //so this part gets gunked up because its inserting it every 3 elements, not every 3 numbers. and with that i must conclude
                     tlength -= 3;
@@ -150,7 +153,6 @@ function draw(val){
             }
 
             temp = temp.join("");
-
             resultsDisplay.textContent = temp;
         }
 
