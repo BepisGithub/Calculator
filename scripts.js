@@ -95,11 +95,14 @@ function draw(val){
             temp = temp.join("");
             resultsDisplay.textContent = temp;
         }else{
+            console.log(temp);
+
             temp = temp.filter(item => {
-                if (!(isNaN(item)) || item=="."){
+                if (!(isNaN(item)) || item=="." || item=="-"){
                     return true;
                 }
             });
+            console.log(temp);
 
             let periodPos = temp.indexOf(".");
 
