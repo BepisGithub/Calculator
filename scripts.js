@@ -263,7 +263,7 @@ functionButtons.forEach((element,index) => {
                         //
                         let temp = userInput;
                         userInput = [];
-                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
+                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(2));
                         displayValue = userInput[0];
                         displayValue = String(displayValue);
                         // resultsDisplay.textContent = displayValue;
@@ -320,7 +320,7 @@ functionButtons.forEach((element,index) => {
                         }else{
                         let temp = userInput;
                         userInput = [];
-                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(5));
+                        userInput[0] = Number((operate(temp[0],temp[1],temp[2])).toFixed(2));
                         userInput[1] = temp[3];
                         displayValue = userInput[0];
                         // resultsDisplay.textContent = displayValue;
