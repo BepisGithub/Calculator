@@ -27,6 +27,9 @@ function operate(a,operator,b){
     }
 }
 
+//todo: fix the poor naming convention e.g. using temp everywhere
+//make the code neater
+
 let hasDecimal = false;
 const body = document.querySelector("body");
 let numberButtons = [];
