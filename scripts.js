@@ -159,7 +159,7 @@ function draw(val){
 
 }
 
-draw("LD's calculator project!");
+draw("LD's calculator project! Doesn't work beyond 2dp");
 
 numberButtons.forEach((element,index) => { //goona make this so that it doesnt get converted to a number till one of the operations is pressed
     element.addEventListener("click",() => {
